@@ -1,0 +1,30 @@
+.similar {
+    margin-top: 2rem;
+}
+
+.similarGrid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.similarCard {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    width: 150px;
+}
+
+.similarImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.similarInfo {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+}

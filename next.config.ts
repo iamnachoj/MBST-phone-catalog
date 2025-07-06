@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "prueba-tecnica-api-tienda-moviles.onrender.com",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

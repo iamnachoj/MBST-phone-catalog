@@ -10,7 +10,7 @@ export default async function PhoneDetailPage({ params }: Props) {
     const phone = await fetchPhoneById(params.id);
 
     if (!phone) {
-        notFound(); // devuelve 404 si no hay teléfono
+        notFound();
     }
 
     return (
