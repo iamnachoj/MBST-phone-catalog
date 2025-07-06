@@ -10,12 +10,14 @@ export default async function HomePage() {
 
   return (
       <>
-          <Navbar />
-          <main className={styles.main}>
-              <h1 className={styles.title}>Catálogo de Teléfonos</h1>
-              <PhoneGrid phones={phones} />
-          </main>
-          <Footer />
+          <div className={styles.container}>
+              <Navbar />
+              <main>
+                  <h1 className={styles.title}>Catálogo de Teléfonos</h1>
+                  <PhoneGrid phones={phones}/>
+              </main>
+          </div>
+          <Footer/>
       </>
   );
 }
