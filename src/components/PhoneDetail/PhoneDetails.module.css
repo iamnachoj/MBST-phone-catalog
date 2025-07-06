@@ -115,4 +115,7 @@
         padding: 1rem 1rem;
         gap: 0;
     }
+    .addButton {
+        width: auto;
+    }
 }
