@@ -8,16 +8,21 @@ interface PhoneCardProps {
 export default function PhoneCard({ phone }: PhoneCardProps) {
   return (
       <Link href={`/phone/${phone.id}`} className={styles.card}>
-        <img
-            src={phone.imageUrl}
-            alt={`${phone.brand} ${phone.name}`}
-            className={styles.image}
-            loading="lazy"
-        />
-        <h2 className={styles.title}>
-          {phone.name} {phone.brand}
-        </h2>
-        <p className={styles.price}>Desde {phone.basePrice}€</p>
+          <div className={styles.cardContent}>
+              <img
+                  src={phone.imageUrl}
+                  alt={`${phone.brand} ${phone.name}`}
+                  className={styles.image}
+                  loading="lazy"
+              />
+              <div className={styles.infoRow}>
+                  <div className={styles.left}>
+                      <span className={styles.brand}>{phone.brand.toUpperCase()}</span>
+                      <span className={styles.name}>{phone.name.toUpperCase()}</span>
+                  </div>
+                  <div className={styles.price}>{phone.basePrice} EUR</div>
+              </div>
+          </div>
       </Link>
   );
 }

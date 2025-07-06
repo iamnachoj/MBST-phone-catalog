@@ -1,0 +1,18 @@
+.searchBar {
+    margin-bottom: 1rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: black;
+    outline: none;
+}

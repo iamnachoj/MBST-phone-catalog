@@ -6,5 +6,6 @@ function getEnvVar(name: string): string {
     return value;
 }
 
-export const API_KEY = getEnvVar("API_KEY");
+// Only for Server Side usage
+export const API_KEY = getEnvVar("NEXT_PUBLIC_API_KEY");
 export const BASE_URL = getEnvVar("BASE_URL");

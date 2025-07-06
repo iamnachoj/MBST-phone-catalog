@@ -2,8 +2,13 @@
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     max-width: calc(5 * 344px + 4 * 24px);
-    margin: 0 auto;
+    margin-top: 2rem;
     justify-content: center;
+}
+
+.results {
+    margin-bottom: 1rem;
+    font-size: 10px;
 }
 
 @media (max-width: 1200px) {

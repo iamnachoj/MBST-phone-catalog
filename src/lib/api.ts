@@ -1,10 +1,21 @@
-import { API_KEY, BASE_URL } from "./env";
+export async function fetchPhones(limit = 20, search = "") {
+  const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+  const BASE_URL = process.env.BASE_URL
 
-export async function fetchPhones(limit = 20) {
-  const res = await fetch(`${BASE_URL}/products?limit=${limit}`, {
+  if (!API_KEY || !BASE_URL) {
+    throw new Error("Missing NEXT_PUBLIC_API_KEY or BASE_URL");
+  }
+
+  const query = new URLSearchParams();
+  query.set("limit", limit.toString());
+  if (search) {
+    query.set("search", search);
+  }
+
+  const res = await fetch(`${BASE_URL}/products?${query.toString()}`, {
     headers: {
       Accept: "application/json",
-      "x-api-key": API_KEY,
+      "x-api-key": API_KEY!,
     },
     next: { revalidate: 60 },
   });
@@ -15,3 +26,4 @@ export async function fetchPhones(limit = 20) {
 
   return res.json();
 }
+

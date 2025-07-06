@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import Navbar from "@/components/Navbar/Navbar";
+import styles from "@/app/page.module.css";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "MBST Store",
@@ -14,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className={styles.container}>
+          <Navbar />
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }
