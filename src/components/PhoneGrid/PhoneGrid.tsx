@@ -22,20 +22,24 @@ export default function PhoneGrid({ initialPhones }: Props) {
     }
 
     let cancelled = false;
+    const debounceDelay = 500;
 
-    const load = async () => {
-      try {
-        const data = await fetchPhones(20, search);
-        if (!cancelled) setPhones(data);
-      } catch (e) {
-        console.error(e);
-      }
-    };
+    const handler = setTimeout(() => {
+      const load = async () => {
+        try {
+          const data = await fetchPhones(20, search);
+          if (!cancelled) setPhones(data);
+        } catch (e) {
+          console.error(e);
+        }
+      };
 
-    load();
+      load();
+    }, debounceDelay);
 
     return () => {
       cancelled = true;
+      clearTimeout(handler);
     };
   }, [search, initialPhones]);
 

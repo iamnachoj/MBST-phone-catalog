@@ -1,8 +1,8 @@
 export async function fetchPhones(limit = 20, search = "") {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-  const BASE_URL = process.env.BASE_URL
+  const BASE_URL = "https://prueba-tecnica-api-tienda-moviles.onrender.com";
 
-  if (!API_KEY || !BASE_URL) {
+  if (!API_KEY) {
     throw new Error("Missing NEXT_PUBLIC_API_KEY or BASE_URL");
   }
 
@@ -26,4 +26,3 @@ export async function fetchPhones(limit = 20, search = "") {
 
   return res.json();
 }
-
