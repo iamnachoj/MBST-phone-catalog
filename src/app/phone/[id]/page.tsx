@@ -2,20 +2,19 @@ import { fetchPhoneById } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { PhoneDetails } from "@/components/PhoneDetail/PhoneDetails";
 
-type Params = {
-  params: { id: string };
-};
+type ParamsPromise = Promise<{ id: string }>;
 
-export default async function PhoneDetailPage({ params }: Params) {
-  const phone = await fetchPhoneById(params.id);
+export default async function PhoneDetailPage({ params }: { params: ParamsPromise }) {
+    const { id } = await params;
+    const phone = await fetchPhoneById(id);
 
-  if (!phone) {
-    notFound();
-  }
+    if (!phone) {
+        notFound();
+    }
 
-  return (
-      <main>
-        <PhoneDetails phone={phone} />
-      </main>
-  );
+    return (
+        <main>
+            <PhoneDetails phone={phone} />
+        </main>
+    );
 }
