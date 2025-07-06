@@ -26,7 +26,7 @@ export default function CartPage() {
 
   return (
     <div className={styles.container}>
-      <h1>Tu carrito</h1>
+      <h1>TU CARRITO</h1>
       <ul className={styles.itemList}>
         {cart.map((item) => (
           <li
@@ -36,23 +36,26 @@ export default function CartPage() {
             <img src={item.imageUrl} alt={item.name} className={styles.image} />
             <div className={styles.info}>
               <h2>
-                {item.brand} {item.name}
+                {item.brand.toUpperCase()} {item.name.toUpperCase()}
               </h2>
               <p>Color: {item.color}</p>
               <p>Almacenamiento: {item.storage.capacity}</p>
               <p>Cantidad: {item.quantity}</p>
               <p>Precio unitario: {item.basePrice + item.storage.price} €</p>
-              <p>
+              <p className={styles.totalPriceMobile}>
                 Total: {(item.basePrice + item.storage.price) * item.quantity} €
               </p>
             </div>
+            <p className={styles.totalPriceDesktop}>
+              Total: {(item.basePrice + item.storage.price) * item.quantity} €
+            </p>
           </li>
         ))}
       </ul>
       <div className={styles.summary}>
         <h2>Total del carrito: {total} €</h2>
         <button className={styles.checkoutButton} disabled>
-          Finalizar compra (deshabilitado)
+          Finalizar compra
         </button>
       </div>
     </div>

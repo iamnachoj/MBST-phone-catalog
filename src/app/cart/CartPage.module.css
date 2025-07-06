@@ -1,8 +1,15 @@
 /* app/cart/CartPage.module.css */
 .container {
-    padding: 2rem;
-    max-width: 960px;
+    padding: 2rem 48px;
     margin: 0 auto;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
 }
 
 .itemList {
@@ -27,12 +34,28 @@
 
 .info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.totalPriceDesktop {
+    font-weight: bold;
+}
+
+.totalPriceMobile {
+    font-weight: bold;
+    display: none;
 }
 
 .summary {
     text-align: right;
     font-size: 1.2rem;
     margin-top: 2rem;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
 }
 
 .checkoutButton {
@@ -54,4 +77,17 @@
     display: inline-block;
     text-decoration: underline;
     color: #333;
+}
+
+@media (max-width: 640px) {
+    .totalPriceDesktop {
+        display: none;
+    }
+    .totalPriceMobile {
+        display: block;
+    }
+    .container {
+        padding: 1rem 1rem;
+        gap: 0;
+    }
 }

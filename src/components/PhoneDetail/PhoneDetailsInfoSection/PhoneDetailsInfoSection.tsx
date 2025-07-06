@@ -23,7 +23,7 @@ export function PhoneDetailsInfoSection({
 }: PhoneDetailsInfoSectionProps) {
   return (
     <section className={styles.info}>
-      <h1 className={styles.title}>{phone.name.toUpperCase()}</h1>
+      <h1 className={styles.title}>{phone.brand.toUpperCase()} {phone.name.toUpperCase()}</h1>
       <p className={styles.basePrice}>{phone.basePrice} EUR</p>
 
       <div className={styles.section}>

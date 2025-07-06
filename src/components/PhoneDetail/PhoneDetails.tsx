@@ -55,8 +55,8 @@ export function PhoneDetails({ phone }: Props) {
             <Image
               src={selectedImage}
               alt={phone.name}
-              width={500}
-              height={500}
+              width={350}
+              height={350}
               className={styles.mainImage}
             />
           )}
