@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import styles from "@/app/page.module.css";
 import Footer from "@/components/Footer/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
   title: "MBST Store",
@@ -19,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className={styles.container}>
-          <Navbar />
-          {children}
+          <CartProvider>
+            <Navbar />
+            {children}
+          </CartProvider>
         </div>
         <Footer />
       </body>

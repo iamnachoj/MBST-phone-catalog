@@ -7,6 +7,8 @@ import Link from "next/link";
 import SimilarProducts from "@/components/SimilarProducts/SimilarProducts";
 import { PhoneDetailsInfoSection } from "@/components/PhoneDetail/PhoneDetailsInfoSection/PhoneDetailsInfoSection";
 import { usePhoneSelection } from "@/hooks/usePhoneSelection";
+import { useCart } from "@/hooks/useCart";
+import { CartItem } from "@/types/cart";
 
 interface Props {
   phone: PhoneDetailsData;
@@ -22,14 +24,21 @@ export function PhoneDetails({ phone }: Props) {
     selectedImage,
   } = usePhoneSelection(phone);
 
+  const { addToCart } = useCart();
+
   const handleAddToCart = () => {
     if (!selectedColor || !selectedStorage) return;
 
-    // TODO: dispatch to cart context
-    console.log("Added to cart:", {
+    addToCart({
       id: phone.id,
+      brand: phone.brand,
+      name: phone.name,
+      imageUrl: selectedImage ?? "",
       color: selectedColor,
       storage: selectedStorage,
+      totalPrice: phone.basePrice + selectedStorage.price,
+      basePrice: phone.basePrice,
+      quantity: 1,
     });
   };
 
