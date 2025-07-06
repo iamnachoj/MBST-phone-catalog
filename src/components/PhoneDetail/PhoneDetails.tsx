@@ -9,6 +9,7 @@ import { PhoneDetailsInfoSection } from "@/components/PhoneDetail/PhoneDetailsIn
 import { usePhoneSelection } from "@/hooks/usePhoneSelection";
 import { useCart } from "@/hooks/useCart";
 import { CartItem } from "@/types/cart";
+import {redirect} from "next/navigation";
 
 interface Props {
   phone: PhoneDetailsData;
@@ -40,6 +41,7 @@ export function PhoneDetails({ phone }: Props) {
       basePrice: phone.basePrice,
       quantity: 1,
     });
+    redirect('/cart')
   };
 
   return (
