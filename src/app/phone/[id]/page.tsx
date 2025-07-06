@@ -2,11 +2,7 @@ import { fetchPhoneById } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { PhoneDetails } from "@/components/PhoneDetail/PhoneDetails";
 
-interface Props {
-  params: { id: string };
-}
-
-export default async function PhoneDetailPage({ params }: Props) {
+export default async function PhoneDetailPage({ params }: { params: { id: string } }) {
   const phone = await fetchPhoneById(params.id);
 
   if (!phone) {
@@ -14,8 +10,8 @@ export default async function PhoneDetailPage({ params }: Props) {
   }
 
   return (
-    <main>
-      <PhoneDetails phone={phone} />
-    </main>
+      <main>
+        <PhoneDetails phone={phone} />
+      </main>
   );
 }
