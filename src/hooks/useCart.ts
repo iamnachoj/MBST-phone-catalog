@@ -7,7 +7,7 @@ export const useCart = () => {
   if (!context) {
     throw new Error("useCart must be used within a CartProvider");
   }
-  const { cart, setCart } = context;
+  const { cart, setCart, loaded } = context;
 
   const addToCart = (item: CartItem) => {
     setCart((prevCart) => {
@@ -33,5 +33,5 @@ export const useCart = () => {
     });
   };
 
-  return { cart, addToCart };
+  return { cart, addToCart, loaded };
 };
