@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      © {new Date().getFullYear()} Zara Challenge. Todos los derechos
+      © {new Date().getFullYear()} Napptilus Challenge. Todos los derechos
       reservados.
       <p className={styles.watermark}>
         Made with 💙 by{" "}
