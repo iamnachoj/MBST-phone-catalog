@@ -5,12 +5,13 @@ import Image from "next/image";
 export default function Navbar() {
   return (
       <nav className={styles.navbar}>
-          <Link href="/" className={styles.title} aria-label="Inicio">
+          <Link href="/" className={styles.title} aria-label="Logo: MBST">
               <Image
                   src="/logo.svg"
                   alt="Logo"
                   width={74}
                   height={28}
+                  aria-hidden={true}
               />
           </Link>
 
@@ -20,8 +21,9 @@ export default function Navbar() {
                   alt="Cart"
                   width={18}
                   height={18}
+                  aria-hidden={true}
               />
-              <span className={styles.quantity}>0</span>
+              <span aria-label={'Quantity: 0'} className={styles.quantity}>0</span>
           </button>
       </nav>
   );

@@ -18,7 +18,7 @@ export default function SearchBar({ onSearch, initialValue = "" }: SearchBarProp
     };
 
     return (
-        <div className={styles.searchBar}>
+        <section className={styles.searchBar}>
             <input
                 type="text"
                 placeholder="Buscar por marca o modelo..."
@@ -27,6 +27,6 @@ export default function SearchBar({ onSearch, initialValue = "" }: SearchBarProp
                 className={styles.input}
                 aria-label="Buscar"
             />
-        </div>
+        </section>
     );
 }

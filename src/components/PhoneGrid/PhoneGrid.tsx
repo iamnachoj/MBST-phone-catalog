@@ -47,11 +47,11 @@ export default function PhoneGrid({ initialPhones }: Props) {
     <div>
       <SearchBar onSearch={setSearch} initialValue={search} />
       <p className={styles.results}>{phones.length} RESULTADOS</p>
-      <div className={styles.grid}>
+      <section className={styles.grid}>
         {phones.map((phone, index) => (
           <PhoneCard key={`${phone.id}-${index}`} phone={phone} />
         ))}
-      </div>
+      </section>
     </div>
   );
 }
