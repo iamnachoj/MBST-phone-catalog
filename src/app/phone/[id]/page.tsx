@@ -2,7 +2,11 @@ import { fetchPhoneById } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { PhoneDetails } from "@/components/PhoneDetail/PhoneDetails";
 
-export default async function PhoneDetailPage({ params }: { params: { id: string } }) {
+type Params = {
+  params: { id: string };
+};
+
+export default async function PhoneDetailPage({ params }: Params) {
   const phone = await fetchPhoneById(params.id);
 
   if (!phone) {
