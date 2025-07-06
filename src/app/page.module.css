@@ -4,6 +4,12 @@
     min-height: 70vh;
 }
 
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem 1rem;
+    }
+}
+
 .title {
     font-size: 2rem;
     font-weight: bold;
