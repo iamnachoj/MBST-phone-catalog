@@ -11,7 +11,7 @@ export interface Phone {
     imageUrl: string;
 }
 
-export interface PhoneDetails {
+export interface PhoneDetailsData {
     id: string;
     brand: string;
     name: string;
@@ -33,10 +33,7 @@ export interface PhoneDetails {
         hexCode: string;
         imageUrl: string;
     }[];
-    storageOptions: {
-        capacity: string;
-        price: number;
-    }[];
+    storageOptions: StorageOptions[];
     similarProducts: {
         id: string;
         brand: string;
@@ -44,4 +41,9 @@ export interface PhoneDetails {
         basePrice: number;
         imageUrl: string;
     }[];
+}
+
+export interface StorageOptions {
+    capacity: string;
+    price: number;
 }

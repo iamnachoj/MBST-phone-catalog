@@ -22,7 +22,7 @@ export default function PhoneGrid({ initialPhones }: Props) {
     }
 
     let cancelled = false;
-    const debounceDelay = 500;
+    const debounceDelay = 300;
 
     const handler = setTimeout(() => {
       const load = async () => {

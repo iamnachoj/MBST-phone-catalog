@@ -1,21 +1,21 @@
 import { fetchPhoneById } from "@/lib/api";
 import { notFound } from "next/navigation";
-import { PhoneDetail } from "@/components/PhoneDetail/PhoneDetail";
+import { PhoneDetails } from "@/components/PhoneDetail/PhoneDetails";
 
 interface Props {
-    params: { id: string };
+  params: { id: string };
 }
 
 export default async function PhoneDetailPage({ params }: Props) {
-    const phone = await fetchPhoneById(params.id);
+  const phone = await fetchPhoneById(params.id);
 
-    if (!phone) {
-        notFound();
-    }
+  if (!phone) {
+    notFound();
+  }
 
-    return (
-        <main>
-            <PhoneDetail phone={phone} />
-        </main>
-    );
+  return (
+    <main>
+      <PhoneDetails phone={phone} />
+    </main>
+  );
 }

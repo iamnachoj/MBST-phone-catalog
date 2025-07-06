@@ -25,9 +25,9 @@ export default function SimilarProducts({
     <aside className={styles.similar}>
       <h3>Productos similares</h3>
       <div className={styles.similarGrid}>
-        {similarProducts.map((similar) => (
+        {similarProducts.map((similar, index) => (
           <Link
-            key={similar.id}
+            key={`${similar.id}-${index}`}
             href={`/phone/${similar.id}`}
             className={styles.similarCard}
           >
