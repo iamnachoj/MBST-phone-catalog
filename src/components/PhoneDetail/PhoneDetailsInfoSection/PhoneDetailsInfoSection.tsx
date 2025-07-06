@@ -1,6 +1,6 @@
 import styles from "@/components/PhoneDetail/PhoneDetails.module.css";
 import { PhoneDetailsData, StorageOptions } from "@/types/phone";
-import { SpecList } from "@/components/PhoneDetail/PhoneDetailsInfoSection/SpectList/SpecList";
+import { SpecList } from "@/components/SpectList/SpecList";
 
 interface PhoneDetailsInfoSectionProps {
   phone: PhoneDetailsData;
@@ -68,8 +68,6 @@ export function PhoneDetailsInfoSection({
       >
         Añadir al carrito
       </button>
-
-      <SpecList specs={phone.specs} />
     </section>
   );
 }

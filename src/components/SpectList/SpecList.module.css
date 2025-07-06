@@ -1,0 +1,33 @@
+.specs {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.specsTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.specsTable {
+    margin: auto;
+    width: 100%;
+    max-width: 960px;
+    border-collapse: collapse;
+}
+
+.specsTable th,
+.specsTable td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.specsTable th {
+    font-weight: 600;
+    color: #555;
+    width: 40%;
+}
+
+.specsTable td {
+    color: #333;
+}

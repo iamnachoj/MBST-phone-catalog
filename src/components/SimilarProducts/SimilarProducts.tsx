@@ -23,7 +23,7 @@ export default function SimilarProducts({
 
   return (
     <aside className={styles.similar}>
-      <h3>Productos similares</h3>
+      <h3>PRODUCTOS SIMILARES</h3>
       <div className={styles.similarGrid}>
         {similarProducts.map((similar, index) => (
           <Link

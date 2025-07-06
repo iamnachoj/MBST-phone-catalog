@@ -10,6 +10,7 @@ import { usePhoneSelection } from "@/hooks/usePhoneSelection";
 import { useCart } from "@/hooks/useCart";
 import { CartItem } from "@/types/cart";
 import {redirect} from "next/navigation";
+import {SpecList} from "@/components/SpectList/SpecList";
 
 interface Props {
   phone: PhoneDetailsData;
@@ -71,6 +72,7 @@ export function PhoneDetails({ phone }: Props) {
           handleAddToCart={handleAddToCart}
         />
       </div>
+      <SpecList specs={phone.specs} />
       <SimilarProducts similarProducts={phone.similarProducts} />
     </>
   );

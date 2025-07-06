@@ -1,9 +1,11 @@
 .similar {
-    margin-top: 2rem;
+    text-align: center;
 }
 
 .similarGrid {
     display: flex;
+    margin-top: 1rem;
+    justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
