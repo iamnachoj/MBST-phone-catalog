@@ -39,6 +39,13 @@
     gap: 0.5rem;
 }
 
+.deleteButton {
+    all: unset;
+    color: red;
+    cursor: pointer;
+}
+
+
 .totalPriceDesktop {
     font-weight: bold;
 }

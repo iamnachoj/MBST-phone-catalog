@@ -6,7 +6,7 @@ import styles from "./CartPage.module.css";
 import Link from "next/link";
 
 export default function CartPage() {
-  const { cart } = useCart();
+  const { cart, removeFromCart } = useCart();
 
   const total = cart.reduce((sum, item) => {
     const itemPrice = item.basePrice + item.storage.price;
@@ -41,7 +41,7 @@ export default function CartPage() {
               <p>Color: {item.color}</p>
               <p>Almacenamiento: {item.storage.capacity}</p>
               <p>Cantidad: {item.quantity}</p>
-              <p>Precio unitario: {item.basePrice + item.storage.price} €</p>
+              <button className={styles.deleteButton} onClick={() => removeFromCart(item.id)}>Eliminar</button>
               <p className={styles.totalPriceMobile}>
                 Total: {(item.basePrice + item.storage.price) * item.quantity} €
               </p>

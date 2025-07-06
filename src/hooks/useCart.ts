@@ -33,5 +33,9 @@ export const useCart = () => {
     });
   };
 
-  return { cart, addToCart, loaded };
+  const removeFromCart = (id: string) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  };
+
+  return { cart, addToCart, loaded, removeFromCart };
 };
