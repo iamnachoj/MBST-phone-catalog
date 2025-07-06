@@ -8,9 +8,8 @@ import SimilarProducts from "@/components/SimilarProducts/SimilarProducts";
 import { PhoneDetailsInfoSection } from "@/components/PhoneDetail/PhoneDetailsInfoSection/PhoneDetailsInfoSection";
 import { usePhoneSelection } from "@/hooks/usePhoneSelection";
 import { useCart } from "@/hooks/useCart";
-import { CartItem } from "@/types/cart";
-import {redirect} from "next/navigation";
-import {SpecList} from "@/components/SpectList/SpecList";
+import { redirect } from "next/navigation";
+import { SpecList } from "@/components/SpectList/SpecList";
 
 interface Props {
   phone: PhoneDetailsData;
@@ -42,7 +41,7 @@ export function PhoneDetails({ phone }: Props) {
       basePrice: phone.basePrice,
       quantity: 1,
     });
-    redirect('/cart')
+    redirect("/cart");
   };
 
   return (

@@ -1,13 +1,12 @@
 import styles from "@/components/PhoneDetail/PhoneDetails.module.css";
-import { PhoneDetailsData, StorageOptions } from "@/types/phone";
-import { SpecList } from "@/components/SpectList/SpecList";
+import { PhoneDetailsData, StorageOption } from "@/types/phone";
 
 interface PhoneDetailsInfoSectionProps {
   phone: PhoneDetailsData;
   selectedColor: string | null;
   setSelectedColor: (color: string) => void;
-  selectedStorage: StorageOptions | null;
-  setSelectedStorage: (storage: StorageOptions) => void;
+  selectedStorage: StorageOption | null;
+  setSelectedStorage: (storage: StorageOption) => void;
   totalPrice: number;
   handleAddToCart: () => void;
 }
@@ -23,7 +22,9 @@ export function PhoneDetailsInfoSection({
 }: PhoneDetailsInfoSectionProps) {
   return (
     <section className={styles.info}>
-      <h1 className={styles.title}>{phone.brand.toUpperCase()} {phone.name.toUpperCase()}</h1>
+      <h1 className={styles.title}>
+        {phone.brand.toUpperCase()} {phone.name.toUpperCase()}
+      </h1>
       <p className={styles.basePrice}>{phone.basePrice} EUR</p>
 
       <div className={styles.section}>
@@ -62,7 +63,7 @@ export function PhoneDetailsInfoSection({
 
       <button
         className={styles.addButton}
-        aria-label={'Add to Cart'}
+        aria-label={"Add to Cart"}
         disabled={!selectedColor || !selectedStorage}
         onClick={handleAddToCart}
       >

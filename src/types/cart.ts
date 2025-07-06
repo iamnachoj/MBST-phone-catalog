@@ -1,4 +1,4 @@
-import { StorageOptions } from "@/types/phone";
+import { StorageOption } from "@/types/phone";
 
 export interface CartItem {
   id: string;
@@ -6,7 +6,7 @@ export interface CartItem {
   brand: string;
   imageUrl: string;
   color: string;
-  storage: StorageOptions;
+  storage: StorageOption;
   basePrice: number;
   totalPrice: number;
   quantity: number;
