@@ -18,25 +18,27 @@ export interface PhoneDetailsData {
   description: string;
   basePrice: number;
   rating: number;
-  specs: {
-    screen: string;
-    resolution: string;
-    processor: string;
-    mainCamera: string;
-    selfieCamera: string;
-    battery: string;
-    os: string;
-    screenRefreshRate: string;
-  };
+  specs: Specs;
   colorOptions: ColorOption[];
   storageOptions: StorageOption[];
-  similarProducts: {
+  similarProducts?: {
     id: string;
     brand: string;
     name: string;
     basePrice: number;
     imageUrl: string;
   }[];
+}
+
+export interface Specs {
+  screen: string;
+  resolution: string;
+  processor: string;
+  mainCamera: string;
+  selfieCamera: string;
+  battery: string;
+  os: string;
+  screenRefreshRate: string;
 }
 
 export interface StorageOption {
