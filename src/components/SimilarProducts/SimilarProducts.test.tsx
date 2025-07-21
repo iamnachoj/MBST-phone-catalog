@@ -5,6 +5,7 @@ import { mockSimilarProducts } from "@/__mocks__/mockPhoneData";
 
 jest.mock("next/image", () => ({
   __esModule: true,
+  // eslint-disable-next-line @next/next/no-img-element
   default: (props: any) => <img {...props} />,
 }));
 

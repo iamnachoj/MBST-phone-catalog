@@ -4,6 +4,7 @@
 import { useCart } from "@/hooks/useCart";
 import styles from "./CartPage.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CartPage() {
   const { cart, removeFromCart } = useCart();
@@ -33,7 +34,7 @@ export default function CartPage() {
             key={`${item.id}-${item.color}-${item.storage.capacity}`}
             className={styles.item}
           >
-            <img src={item.imageUrl} alt={item.name} className={styles.image} />
+            <Image src={item.imageUrl} alt={item.name} className={styles.image} />
             <div className={styles.info}>
               <h2>
                 {item.brand.toUpperCase()} {item.name.toUpperCase()}
