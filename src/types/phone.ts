@@ -21,13 +21,7 @@ export interface PhoneDetailsData {
   specs: Specs;
   colorOptions: ColorOption[];
   storageOptions: StorageOption[];
-  similarProducts?: {
-    id: string;
-    brand: string;
-    name: string;
-    basePrice: number;
-    imageUrl: string;
-  }[];
+  similarProducts: SimilarProduct[];
 }
 
 export interface Specs {
@@ -49,5 +43,13 @@ export interface StorageOption {
 export interface ColorOption {
   name: string;
   hexCode: string;
+  imageUrl: string;
+}
+
+export interface SimilarProduct {
+  id: string;
+  brand: string;
+  name: string;
+  basePrice: number;
   imageUrl: string;
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./PhoneCard.module.css";
 import {Phone} from "@/types/phone";
+import Image from "next/image";
 interface PhoneCardProps {
   phone: Phone;
 }
@@ -9,7 +10,7 @@ export default function PhoneCard({ phone }: PhoneCardProps) {
   return (
       <Link href={`/phone/${phone.id}`} className={styles.card}>
           <div className={styles.cardContent}>
-              <img
+              <Image
                   src={phone.imageUrl}
                   alt={`${phone.brand} ${phone.name}`}
                   className={styles.image}

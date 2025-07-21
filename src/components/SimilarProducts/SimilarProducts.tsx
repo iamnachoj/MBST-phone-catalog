@@ -3,14 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./SimilarProducts.module.css";
-
-interface SimilarProduct {
-  id: string;
-  brand: string;
-  name: string;
-  basePrice: number;
-  imageUrl: string;
-}
+import { SimilarProduct } from "@/types/phone";
 
 interface SimilarProductsProps {
   similarProducts: SimilarProduct[];
