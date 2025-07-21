@@ -9,6 +9,7 @@ jest.mock("next/image", () => ({
 
 // Mock next/link to render children directly (simple mock)
 jest.mock("next/link", () => {
+    // eslint-disable-next-line react/display-name
     return ({ children, href, ...props }: any) => (
         <a href={href} {...props}>
             {children}
